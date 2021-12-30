@@ -1,0 +1,7 @@
+FROM node
+WORKDIR /usr/src/app
+COPY ./package*.json /usr/src/app/
+RUN set -e && npm install
+COPY ./ /usr/src/app/
+EXPOSE 8085
+CMD [ "node", "index.js" ]

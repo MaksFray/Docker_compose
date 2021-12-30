@@ -1,0 +1,15 @@
+kind: pipeline
+type: kubernetes
+name: dronetest
+steps:
+  - name: install
+    image: node:14-alpine
+    commands:
+      - "node -v"
+      - "npm -v"
+      - "npm install"
+
+  - name: testing
+    image: node:14-alpine
+    commands:
+      - "npm run test"
